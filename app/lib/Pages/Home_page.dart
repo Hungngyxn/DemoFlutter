@@ -77,7 +77,7 @@
                         // ),
                         TextButton(
                           onPressed: () {
-                            //showDataAlert(context);
+                            showDataAlert(context);
                           },
                           child: Container(
                             decoration: const BoxDecoration(
@@ -422,87 +422,87 @@
     }
   }
 
-  // showDataAlert(BuildContext context) {
-  //   showDialog(
-  //       context: context,
-  //       builder: (context) {
-  //         return const AlertDialog(
-  //           shape: RoundedRectangleBorder(
-  //             borderRadius: BorderRadius.all(
-  //               Radius.circular(
-  //                 20.0,
-  //               ),
-  //             ),
-  //           ),
-  //           content: RadioListTileExample(),
-  //           contentPadding: EdgeInsets.only(
-  //             top: 10.0,
-  //           ),
-  //         );
-  //       });
-  // }
-  //
-  // enum Groceries { pickles, tomato, lettuce }
+  showDataAlert(BuildContext context) {
+    showDialog(
+        context: context,
+        builder: (context) {
+          return const AlertDialog(
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.all(
+                Radius.circular(
+                  20.0,
+                ),
+              ),
+            ),
+            content: RadioListTileExample(),
+            contentPadding: EdgeInsets.only(
+              top: 10.0,
+            ),
+          );
+        });
+  }
+  
+  enum Groceries { pickles, tomato, lettuce }
 
-  // class RadioListTileExample extends StatefulWidget {
-  //   const RadioListTileExample({super.key});
-  //
-  //   @override
-  //   State<RadioListTileExample> createState() => _RadioListTileExampleState();
-  // }
-  //
-  // class _RadioListTileExampleState extends State<RadioListTileExample> {
-  //   Groceries? _groceryItem = Groceries.pickles;
-  //
-  //   @override
-  //   Widget build(BuildContext context) {
-  //     return Scaffold(
-  //       appBar: AppBar(title: const Text('')),
-  //       body: Column(
-  //         children: <Widget>[
-  //           RadioListTile<Groceries>(
-  //             value: Groceries.pickles,
-  //             groupValue: _groceryItem,
-  //             onChanged: (Groceries? value) {
-  //               setState(() {
-  //                 _groceryItem = value;
-  //                 //Navigator.pop(context, false);
-  //               });
-  //             },
-  //             title: const Text('Pickles'),
-  //           ),
-  //           RadioListTile<Groceries>(
-  //             value: Groceries.tomato,
-  //             groupValue: _groceryItem,
-  //             onChanged: (Groceries? value) {
-  //               setState(() {
-  //                 _groceryItem = value;
-  //                 // Navigator.pop(context, false);
-  //               });
-  //             },
-  //             title: const Text('Tomato'),
-  //           ),
-  //           RadioListTile<Groceries>(
-  //             value: Groceries.lettuce,
-  //             groupValue: _groceryItem,
-  //             onChanged: (Groceries? value) {
-  //               setState(() {
-  //                 _groceryItem = value;
-  //                 //Navigator.pop(context, false);
-  //               });
-  //             },
-  //             title: const Text('Lettuce'),
-  //           ),
-  //           ElevatedButton(
-  //             onPressed: () {
-  //               text = _groceryItem.toString();
-  //               Navigator.of(context).pop(
-  //                   MaterialPageRoute(builder: (context) => const HomePage()));
-  //             },
-  //             child: const Text('Đóng'),
-  //           )
-  //         ],
-  //       ),
-  //     );
-  //   }
-  // }
+  class RadioListTileExample extends StatefulWidget {
+    const RadioListTileExample({super.key});
+  
+    @override
+    State<RadioListTileExample> createState() => _RadioListTileExampleState();
+  }
+  
+  class _RadioListTileExampleState extends State<RadioListTileExample> {
+    Groceries? _groceryItem = Groceries.pickles;
+  
+    @override
+    Widget build(BuildContext context) {
+      return Scaffold(
+        appBar: AppBar(title: const Text('')),
+        body: Column(
+          children: <Widget>[
+            RadioListTile<Groceries>(
+              value: Groceries.pickles,
+              groupValue: _groceryItem,
+              onChanged: (Groceries? value) {
+                setState(() {
+                  _groceryItem = value;
+                  //Navigator.pop(context, false);
+                });
+              },
+              title: const Text('Pickles'),
+            ),
+            RadioListTile<Groceries>(
+              value: Groceries.tomato,
+              groupValue: _groceryItem,
+              onChanged: (Groceries? value) {
+                setState(() {
+                  _groceryItem = value;
+                  // Navigator.pop(context, false);
+                });
+              },
+              title: const Text('Tomato'),
+            ),
+            RadioListTile<Groceries>(
+              value: Groceries.lettuce,
+              groupValue: _groceryItem,
+              onChanged: (Groceries? value) {
+                setState(() {
+                  _groceryItem = value;
+                  //Navigator.pop(context, false);
+                });
+              },
+              title: const Text('Lettuce'),
+            ),
+            ElevatedButton(
+              onPressed: () {
+                text = _groceryItem.toString();
+                Navigator.of(context).pop(
+                    MaterialPageRoute(builder: (context) => const HomePage()));
+              },
+              child: const Text('Đóng'),
+            )
+          ],
+        ),
+      );
+    }
+  }
